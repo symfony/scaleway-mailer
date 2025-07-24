@@ -96,8 +96,8 @@ final class ScalewayApiTransport extends AbstractApiTransport
         if ($email->getHtmlBody()) {
             $payload['html'] = $email->getHtmlBody();
         }
-        if ($attachements = $this->prepareAttachments($email)) {
-            $payload['attachments'] = $attachements;
+        if ($attachments = $this->prepareAttachments($email)) {
+            $payload['attachments'] = $attachments;
         }
         if ($headers = $this->getCustomHeaders($email)) {
             $payload['additional_headers'] = $headers;
