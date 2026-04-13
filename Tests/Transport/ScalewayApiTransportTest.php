@@ -93,7 +93,7 @@ class ScalewayApiTransportTest extends TestCase
 
     public function testSendThrowsForErrorResponse()
     {
-        $client = new MockHttpClient(function (string $method, string $url, array $options): ResponseInterface {
+        $client = new MockHttpClient(static function (string $method, string $url, array $options): ResponseInterface {
             return new JsonMockResponse(['message' => 'i\'m a teapot'], [
                 'http_code' => 418,
             ]);
